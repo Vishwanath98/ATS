@@ -9,9 +9,9 @@ import json
 
 genai.configure(api_key='AIzaSyBJsNVLoUWq_svCzc_Ga4ylv3kzX96SNFA')
 
-def get_gemini_repsonse(input):
+def get_gemini_repsonse(input_prompt):
     model=genai.GenerativeModel('gemini-pro')
-    response=model.generate_content([input,])
+    response=model.generate_content([input_prompt,])
     return response.text
 
 def input_pdf_text(uploaded_file):
@@ -23,7 +23,7 @@ def input_pdf_text(uploaded_file):
     return text
 
 #Prompt Template
-
+text=''
 input_prompt="""
 Hey Act Like a skilled or very experience ATS(Application Tracking System)
 with a deep understanding of tech field,software engineering,data science ,data analyst
