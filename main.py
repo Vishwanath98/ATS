@@ -11,7 +11,7 @@ genai.configure(api_key='AIzaSyBJsNVLoUWq_svCzc_Ga4ylv3kzX96SNFA')
 
 def get_gemini_repsonse(input):
     model=genai.GenerativeModel('gemini-pro')
-    response=model.generate_content(input)
+    response=model.generate_content([input,])
     return response.text
 
 def input_pdf_text(uploaded_file):
@@ -30,7 +30,7 @@ with a deep understanding of tech field,software engineering,data science ,data 
 and big data engineer. Your task is to evaluate the resume based on the given job description.
 You must consider the job market is very competitive and you should provide 
 best assistance for improving thr resumes. Assign the percentage Matching based 
-on Job description and
+on jd and
 the missing keywords with high accuracy
 resume:{text}
 description:{jd}
